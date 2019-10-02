@@ -7,9 +7,11 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="550" Width="700">
     <StackPanel>
-        <Image Source="dog.jpg" Width="700"/>
-        <TextBlock>Dog Name: </TextBlock><TextBox Name="DogName"></TextBox>
-        <Button Click="Bark_Button_Click">Bark</Button>
-        <Button Click="SayName_Button_Click">Say Name</Button>
+        <Image Source="dog.jpg" Width="700" Margin="0,0,-8,0"/>
+        <TextBlock><Run Text="Dog Name:"/></TextBlock>
+        <TextBox x:Name="DogName"/>
+        <Button Click="Bark_Button_Click" Content="Bark"/>
+        <Button Click="SayName_Button_Click" Content="Say Name"/>
+        <Button Click="Jonah_Click">Jonah </Button>
     </StackPanel>
 </Window>
