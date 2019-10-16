@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+
 namespace MovieList
 {
     /// <summary>
@@ -20,9 +21,41 @@ namespace MovieList
     /// </summary>
     public partial class MainWindow : Window
     {
+        List<Movie> movies = new List<Movie>();
+
         public MainWindow()
         {
             InitializeComponent();
+
+        }
+
+        private void addMovie_Click(object sender, RoutedEventArgs e)
+        {
+            movies.Add(new Movie(movieTitle.Text, Convert.ToInt32(releaseYear.Text), directorName.Text, Convert.ToInt32(movieLength.Text), movieGenre.Text, posterFile.Text));
+            movieTitle.Text = "";
+            releaseYear.Text = "";
+        }
+
+        private void showMovies_Click(object sender, RoutedEventArgs e)
+        {
+            
+            for(int i =0; i < movies.Count; i++)
+            {
+                Movie currentMovie = movies[i];
+                currentMovie.ShowDetails();
+            }
+        }
+
+        private void rotatePosters_Click(object sender, RoutedEventArgs e)
+        {
+            
+            BitmapImage poster = new BitmapImage();
+            poster.BeginInit();
+            poster.UriSource = new Uri(posterFile.Text);
+            poster.EndInit();
+            moviePoster.Source = poster;
+
+
         }
     }
 }
