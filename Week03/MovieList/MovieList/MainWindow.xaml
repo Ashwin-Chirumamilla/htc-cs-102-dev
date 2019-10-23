@@ -26,19 +26,21 @@
         <StackPanel Margin="10,10,10,10" Orientation="Vertical">
             <TextBlock>Title</TextBlock>
             <TextBox Name="movieTitle"></TextBox>
-            <TextBlock>Release Year</TextBlock>
-            <TextBox Name="releaseYear"></TextBox>
-            <TextBlock>Director</TextBlock>
+            <TextBlock>Release Date</TextBlock>
+            <DatePicker Name="releaseYear"></DatePicker>
+                <TextBlock>Director</TextBlock>
             <TextBox Name="directorName"></TextBox>
             <TextBlock>Length</TextBlock>
             <TextBox Name="movieLength"></TextBox>
             <TextBlock>Genre</TextBlock>
             <TextBox Name="movieGenre"></TextBox>
             <TextBlock>Move Poster File</TextBlock>
-            <TextBox Name="posterFile"></TextBox>           
+            <TextBox Name="posterFile"></TextBox>
+            <TextBlock>Rotten Tomatoes Score:</TextBlock>
+            <TextBox Name="rottenTomatoes"></TextBox>
             <Button Name="addMovie" Click="addMovie_Click">Add</Button>
             <Button Name="showMovies" Click="showMovies_Click">Show All Movies</Button>
-            <Button Name="rotatePosters" Click="rotatePosters_Click">Next Movie</Button>
+            <Button Name="rotatePosters" Click="rotatePosters_Click">Next Movie Poster</Button>
             <Image Name="moviePoster"></Image>
 
         </StackPanel>
