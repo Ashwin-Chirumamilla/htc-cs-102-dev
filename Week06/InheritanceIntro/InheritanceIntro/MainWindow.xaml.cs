@@ -50,5 +50,23 @@ namespace InheritanceIntro
                 d.SayName();
             }
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Frog frog = new Frog(3, "Mikey", true);
+            frog.Ribbit();
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            Cow cow = new InheritanceIntro.Cow(2, "Milo", 13);
+            cow.Moo();
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            Tree apple = new Tree(30, "apple", true);
+            apple.Reproduce();
+        }
     }
 }

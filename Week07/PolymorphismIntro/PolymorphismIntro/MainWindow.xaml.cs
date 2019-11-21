@@ -20,27 +20,49 @@ namespace PolymorphismIntro
     /// </summary>
     public partial class MainWindow : Window
     {
+        public List<Animal> Animals;
+
         public MainWindow()
         {
             InitializeComponent();
+            Animals = new List<Animal>();
+            Frog frog = new PolymorphismIntro.Frog(4, "Kermit", false, 25);
+            Dog dog = new PolymorphismIntro.Dog("Muppet", 20, "Rolf", 70);
+            Duck duck = new Duck(9, "Donald", 35);
+            Dog Clifford = new PolymorphismIntro.Dog("terrier", 200, "Clifford", 1000);
+            Duck Daffy = new Duck(5, "Daffy", 60);
+            Frog Jerimiah = new Frog(3, "Jerimiah", true, 15);
+
+            Animals.Add(frog);
+            Animals.Add(dog);
+            Animals.Add(duck);
+            Animals.Add(Clifford);
+            Animals.Add(Daffy);
+            Animals.Add(Jerimiah);
+            lvAnimals.ItemsSource = Animals;
+
+            foreach (Animal a in Animals)
+            {
+                a.SayName();
+            }
         }
 
         private void Bark_Button_Click(object sender, RoutedEventArgs e)
         {
             Dog dog = new Dog();
-            dog.Bark();
+            dog.Speak();
         }
 
         private void Quack_Button_Click(object sender, RoutedEventArgs e)
         {
             Duck duck = new Duck();
-            duck.Quack();
+            duck.Speak();
         }
 
         private void Ribbit_Button_Click(object sender, RoutedEventArgs e)
         {
             Frog frog = new Frog();
-            frog.Ribbit();
+            frog.Speak();
         }
 
         private void SayName_Button_Click(object sender, RoutedEventArgs e)
@@ -49,8 +71,8 @@ namespace PolymorphismIntro
             List<Dog> dogs = new List<Dog>();
             
             // Instantiate some dog objects
-            Dog dog1 = new Dog("Muppet", 20, "Rolf");
-            Dog dog2 = new Dog("Golden Retriever", 30, "Air Bud");
+            Dog dog1 = new Dog("Muppet", 20, "Rolf", 21);
+            Dog dog2 = new Dog("Golden Retriever", 30, "Air Bud", 21 );
 
             // Add the dogs to the list
             dogs.Add(dog1);
@@ -63,11 +85,20 @@ namespace PolymorphismIntro
             }
 
             // Ducks and Frogs
-            Duck duck1 = new Duck(9, "Donald");
+            Duck duck1 = new Duck(9, "Donald", 22);
             duck1.SayName();
 
             Frog frog1 = new Frog(4, "Kermit", false);
             frog1.SayName();
+        }
+
+        private void lvAnimals_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            Animal selectedAnimal = lvAnimals.SelectedItem as Animal;
+            if (selectedAnimal != null)
+            {
+                selectedAnimal.Speak();
+            }
         }
     }
 }

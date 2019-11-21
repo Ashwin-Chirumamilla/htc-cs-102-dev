@@ -10,5 +10,8 @@
         <Image Source="dog.jpg" Width="700"/>
         <Button Click="Bark_Button_Click">Bark</Button>
         <Button Click="SayName_Button_Click">Say Name</Button>
+        <Button Click="Button_Click">Ribbit</Button>
+        <Button Click="Button_Click_1">Moo</Button>
+        <Button Click="Button_Click_2">Reproduce (Tree)</Button>
     </StackPanel>
 </Window>
