@@ -20,10 +20,28 @@ namespace WpfApplication1
     /// </summary>
     public partial class MainWindow : Window
     {
+        GameMovement gm;
         public MainWindow()
         {
             InitializeComponent();
-            Ball.RenderedGeometry.Bounds.Location.
+            
+            
+            PongBall pb = new PongBall();
+            int x = 0, y = 0;
+            pb.Fill = Brushes.AliceBlue;
+            pb.StrokeThickness = 2;
+            Canvas.SetLeft(pb, x);
+            Canvas.SetTop(pb, y);
+            pongCanvas.Children.Add(pb);
+          
+            gm = new GameMovement(this, pb, 0, 0);
+
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            gm.MoveBall();
+
         }
     }
 }

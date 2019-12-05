@@ -14,15 +14,15 @@ namespace WpfApplication1
         {
             get
             {
-                throw new NotImplementedException();
+                return new EllipseGeometry(new System.Windows.Point(X,Y), 10, 10);
             }
         }
-        public double X
-        {
-            get
-            {
-                return this.DefiningGeometry.Bounds.Location.X;
-            }
-        }
+
+        public double xVelocity = 20;
+        public double yVelocity = 20;
+        public double X = 257;
+        public double Y = 162;
+
+        
     }
 }

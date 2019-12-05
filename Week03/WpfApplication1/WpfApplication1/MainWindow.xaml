@@ -6,8 +6,10 @@
         xmlns:local="clr-namespace:WpfApplication1"
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
-    <Grid>
-        <Ellipse Name="Ball" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="47" Margin="264,210,0,0" Stroke="Black" VerticalAlignment="Top" Width="48"/>
-
-    </Grid>
+    <DockPanel Margin="0,0,-27,-250">
+        <Canvas Name="pongCanvas" Height="325" Width="515" Background="Black">
+            
+        </Canvas>
+        <Button Click="Button_Click">Move</Button>
+    </DockPanel>
 </Window>
